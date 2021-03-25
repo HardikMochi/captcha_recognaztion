@@ -1,0 +1,10 @@
+https://download.pytorch.org/whl/cpu/torch-1.1.0-cp37-cp37m-linux_x86_64.whl
+https://download.pytorch.org/whl/cpu/torchvision-0.3.0-cp37-cp37m-linux_x86_64.whl
+flask==1.1.2
+werkzeug==1.0.1
+numpy==1.19.2
+matplotlib
+Pillow==7.0.0
+tqdm==4.41.1
+albumentations==0.1.12
+pickle
