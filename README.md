@@ -8,7 +8,7 @@ Try it out byuploading the captcha image and it will predictt captcha present in
 
 
 Captcha is computer generating text images used to distinguish interactions given by humans or machines. Normally, a captcha image consists of a fixed number of characters (e.g. digit, letter). These characters are not only distorted, scaled into multiple different sizes but also can be overlapped and crossed by multiple random lines.
-<br>I build deep learning models solving this captcha recognition .model consists of convolutional layers to learn visual features. These features are then fed to GRU to compute the final captcha prediction.
+<br>I build deep learning models solving this captcha recognition model consists of convolutional layers to learn visual features. These features are then fed to GRU to compute the final captcha prediction.
 ## Table of Contents
 <details open>
 <summary>Show/Hide</summary>
@@ -16,11 +16,10 @@ Captcha is computer generating text images used to distinguish interactions give
 
 1. [ File Descriptions ](#File_Description)
 2. [ Technologies Used ](#Technologies_Used)    
-3. [ Structure ](#Structure)
-4. [ Executive Summary ](#Executive_Summary)
-   * [ 1. Dataset Description](#Dataset Description)
-   * [ 2. Data Preprocessing ](#Data Preprocessing) 
-   * [ 3. Model Development ](#Model Development)
+3. [ Executive Summary ](#Executive_Summary)
+   * [ 1. Dataset Description](#Dataset_Description)
+   * [ 2. Data Preprocessing  ](#Data_Preprocessing) 
+   * [ 3. Model Development ](#Model_Development)
    * [ 4. Results ](#Results)
    * [ 5. Prediction ](#Prediction)
    * [ 6. Application](#Application)
@@ -65,11 +64,11 @@ Captcha is computer generating text images used to distinguish interactions give
 
 
 <a name="Executive_Summary"></a>
-## Executive Summary
+## Executive Summary:
 
 
-<a name="Dataset Description"></a>
-### Dataset Description :
+<a name="Dataset_Description"></a>
+### Dataset_Description:
 <details open>
 <summary>Show/Hide</summary>
 <br>
@@ -81,8 +80,8 @@ The dataset used for this project consists of 1070 .png images of text based CAP
 <table><tr><td><img src='https://github.com/HardikMochi/captcha_recognaztion/blob/main/captcha_images_v2/23mdg.png' ></td><td><img src='https://github.com/HardikMochi/captcha_recognaztion/blob/main/captcha_images_v2/22d5n.png' ></td></tr></table>
 </detail>
 
-<a name="Data Preprocessing"></a>
-### Data Preprocessing
+<a name="Data_Preprocessing"></a>
+### Data_Preprocessing:
 <details open>
 <summary>Show/Hide</summary>
 <br>
@@ -91,8 +90,8 @@ The dataset used for this project consists of 1070 .png images of text based CAP
 
 </details>
 
-<a name="Model Development"></a>
-### Model Development:
+<a name="Model_Development"></a>
+### Model_Development:
 <details open>
 <summary>Show/Hide</summary>
 <br>
