@@ -23,7 +23,7 @@ Captcha is computer generating text images used to distinguish interactions give
    * [ 3. Model Development ](#Model Development)
    * [ 4. Results ](#Results)
    * [ 5. Prediction ](#Prediction)
-   * [ 6. Revaluation and Deployment ](#Revaluation)
+   * [ 6. Application](#Application)
 </details>
 
 ## File Descriptions
@@ -135,7 +135,7 @@ as you seen in above picture model is correctly predict the captcha.
 </details>
 
 <a name="Application "></a>
-### Deployme:
+### Application:
 <details open>
 <summary>Show/Hide</summary>
 <br>
