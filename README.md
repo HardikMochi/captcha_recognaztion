@@ -18,14 +18,11 @@ Captcha is computer generating text images used to distinguish interactions give
 2. [ Technologies Used ](#Technologies_Used)    
 3. [ Structure ](#Structure)
 4. [ Executive Summary ](#Executive_Summary)
-   * [ 1. Webscraping, Early EDA, and Cleaning ](#Webscraping_Early_EDA_and_Cleaning)
-       * [ Webscraping ](#Webscraping)
-       * [ Early EDA and Cleaning](#Early_EDA_and_Cleaning)
-   * [ 2. Further EDA and Preprocessing ](#Further_EDA_and_Preprocessing) 
-   * [ 3. Modelling and Hyperparameter Tuning ](#Modelling)
-   * [ 4. Evaluation ](#Evaluation)
-       * [ Future Improvements ](#Future_Improvements)
-   * [ 5. Neural Network Modelling ](#Neural_Network_Modelling)
+   * [ 1. Dataset Description](#Dataset Description)
+   * [ 2. Data Preprocessing ](#Data Preprocessing) 
+   * [ 3. Model Development ](#Model Development)
+   * [ 4. Results ](#Results)
+   * [ 5. Prediction ](#Prediction)
    * [ 6. Revaluation and Deployment ](#Revaluation)
 </details>
 
@@ -131,34 +128,23 @@ After training the above model for 70 epochs, the following graph was obtained f
 
 Prediction on the test images. 
    
+<p align="center">
+  <img src="https://github.com/HardikMochi/captcha_recognaztion/blob/main/images/9.PNG" width=600>
+</p>
+as you seen in above picture model is correctly predict the captcha.
 </details>
-<a name="Revaluation"></a>
-### Revaluation and Deployment:
+
+<a name="Application "></a>
+### Deployme:
 <details open>
 <summary>Show/Hide</summary>
 <br>
 
-I tested the neural network model using the test data and achieved an accuracy of <strong>0.5710</strong> which is better than the stacking model accuracy of <strong>0.5077</strong>, by <strong>over 5%</strong>. 
+i created a web application which predict the captcha present in the image. 
     
-I wanted to look at the confusion matrix, as this gives a better idea of how the model is performing over all 5 classes.
-    
-<h5 align="center">Neural Network Model Test Confusion Matrix</h5>
 <p align="center">
-  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/nn_conf_matrix.png" width=600>
+  <img src="https://github.com/HardikMochi/captcha_recognaztion/blob/main/images/3.PNG">
 </p>
     
-The error is more contained within adjacent scores with the neural network model. Almost zero confusion between extreme scores 1 and 5, and minimal confusion with scores 2 and 4. Although a score of 3 can be harder to predict, there is definitely an improvement from the Stacking model. Around 97% of the time the model predicts at least the adjacent score to the actual score.
-
-#### Deployment and Application
-    
-After seeing the improvements from the Stacking model, I was more confident about deploying the model for actionable use.
-    
-I planned on future improvements being the addition of the neural network model and then creating an application for the model, so as a next step I decided to make a working application to test out new reviews using streamlit. I have deployed the app using Heroku: https://hilton-hotel-app.herokuapp.com/. 
-    
-Using this model, we will learn more about our new and old customers, then we can improve Hilton Hotel's guest satisfaction, and as a result increase customer retention and bring in new travelers.
-    
-#### Future Development
-    
-* Create a webscraper spider for twitter, reddit, etc for further model assessment
     
 </details>
