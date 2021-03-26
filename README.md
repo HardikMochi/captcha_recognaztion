@@ -101,90 +101,37 @@ The dataset used for this project consists of 1070 .png images of text based CAP
 <br>
 
 The model developed for this CAPTCHA dataset uses Convolutional Neural Network and GRU. It comprising the input layer, convolutional layers, max pooling layers, dense layers, flatten layers dropout layers and GRU layers. 
-
+<br>Thus, the model uses an image of dimension (3,75, 300) as input and gets output  having dimension 20.
 <h5 align="center">Architecture Model</h5>
 <p align="center">
-  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/all_models.png" width=600>
+  <img src="https://github.com/HardikMochi/captcha_recognaztion/blob/main/images/7.PNG" width=600>
 </p>
-
-Initially, I thought the validation accuracy was low for most of the models I created, but when considering these models were attempting to classify for 5 different classes, 0.45 and greater seems very reasonable (where 0.2 = randomly guessing correctly).
-
-I have saved all the models using the pickle library's dump function and stored them in the Models folder.
+The dataset consists of 1070 sample images out of which 970 images have been used for training and the remaining images for testing purpose. Further, for training the model, a validation split of 0.1 is used which splits the training set such that 90% of the training data is used for training and the remaining 10% for testing. The batch size used is 8
+and the number of epochs used is 70.
 </details>
 
-<a name="Evaluation"></a>
-### Evaluation
+<a name="Results"></a>
+### Results
 <details open>
 <summary>Show/Hide</summary>
 <br>
 
-I focused on 3 factors of defining a good model:
-
-1. Good Validation Accuracy
-2. Good Training Accuracy
-3. Small Difference between Training and Validation Accuracy
-
-I chose the Stacking ensemble model ( (Adaboost with log_reg_2) stacked with log_reg_2 ) as my best model, because it has the highest validation accuracy with only around 3.5% drop from train to validation in accuracy. I wanted to minimise overfitting and make the model as reusable as possible. Stacking achieved a reasonable training accuracy as well, although it did not reach the level of some of the other ensemble techniques.
-
-I next tested the best model with the earlier saved test data. The model managed to get a high test accuracy, similar to the validation data from the model training stage. This is very good, proving that prioritising a high validation score, and minimising the difference between train and validation accuracy, has helped it classify new review texts very well.
-
+After training the above model for 70 epochs, the following graph was obtained for loss with respect to the number of epochs as shown in figure. We see that as the number of epoch’s increases, the loss decreases exponentially. The loss obtained on training set is 0.0388 while the loss on test set is 0.114.
 <h5 align="center">Test Results</h5>
 <p align="center">
-  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/test_results.png" width=600>
+  <img src="https://github.com/HardikMochi/captcha_recognaztion/blob/main/images/10.PNG" width=600>
 </p>
-
-Looking at the precision, recall, and f1 score, I also noticed the scores were higher around scores of 1 and 5, lower for 2, 3, and 4. This shows that the models performs well on more extreme opinions on reviews than mixed opinions.
-
-Looking into different metrics and deeper into my best model; Stacking, I learnt that most the False Postives came from close misses (e.g. predicting a score of 4 for a true score of 5). This is best shown by these two confusion matrixes (validation and test). 
-
-<h5 align="center">Confusion Matrix for Validation and Test Data Predictions ( Validation (Left) and Test (Right) )</h5>
-<table><tr><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/validation_conf_matrix.png' width=500></td><td><img src='https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/test_conf_matrix.png' width=500></td></tr></table>
-
-The adjacent squares of the diagonal going across the confusion matrix, shows that the model's second highest prediction for a given class (review score) is always a review score that is +-1 the true score.
-Very few reviews that have a score of 5, have been predicted to have a score of 1 or 2. This is very relieving to know, the majority of the error for the model, is no different to the error a human may make classifying a review to a score with a scale of 1-5.
-
-- most errors were near misses (e.g. 5 predicted as 4)
-- extreme scores (1 and 5) were relatively accurate
-- comparable to human prediction
-- reusable and consistent
-
-
-Given the classifcation problem is 5 way multi-class one and the adjacent classes can have overlap in the english language even to humans, this model I have created can be deployed.
-
-Applying this model will address the problem of not having a full understanding of public opinion of our hotel. We can apply this to new sources for opinions on our hotel and yield more feedback then we did had before.
-
-<a name="Future_Improvements"></a>
-#### Future Improvements
-
-- Model using neural networks - see if better accuracy can be achieved
-- Create a working application to test new reviews written by people
-- Try a different pre-processing approach and see if model performances change
-- Bring in new sources of data to see if there are significant differences on frequent words used
-
 </details>
 
-<a name="Neural_Network_Modelling"></a>
-### Neural Network Modelling:
+<a name="Prediction"></a>
+### Prediction:
 <details open>
 <summary>Show/Hide</summary>
 <br>
-    
-I experimented with different classifcation and ensemble methods to help classify hotel review scores. Some performed well, but there was definitely room for improvement, so I wanted to explore a deep learning approach. 
-    
-    
-<h5 align="center">Neural Network Architecture</h5>
-<p align="center">
-  <img src="https://github.com/awesomeahi95/Hotel_Review_NLP/blob/master/Images/NN_architecture.png" width=600>
-</p>
-    
-* Input Layer: 17317 Nodes (one for each word in training data + 4 extra for padding, unknown words, start of review, and unused words)
-* Embedding Layer: takes 17317 unique items and maps them into a 16 dimensional vector space
-* Global Average 1D Pooling Layer: scales down 16 dimensional layer
-* Dense Hidden Layer: 16 Nodes (using relu activation function)
-* Dense Output Layer: 5 nodes for each score (using sigmoid activation function)
-    
-</details>
 
+Prediction on the test images. 
+   
+</details>
 <a name="Revaluation"></a>
 ### Revaluation and Deployment:
 <details open>
